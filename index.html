@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوميير | LUMIÈRE — مجوهرات فاخرة</title>
+<meta name="description" content="قلوب بلمسة فضية مصقولة وأحجار زركونيا فاخرة — أناقة تُلبس على القلب. التوصيل مشمول في السعر ودفع عند الاستلام.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF9; --surface:#FFFFFF; --ink:#1C1917; --ink-2:#44403C; --muted:#78716C;
+    --line:#E7E5E4; --line-2:#D6D3D1; --gold:#A16207; --gold-2:#D4AF37;
+    --danger:#B91C1C; --ok:#15803D; --radius:18px;
+    --shadow-sm:0 1px 2px rgba(28,25,23,.06),0 2px 8px rgba(28,25,23,.05);
+    --shadow-md:0 4px 12px rgba(28,25,23,.08),0 12px 32px rgba(28,25,23,.10);
+    --serif:'Cormorant',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  html[dir="rtl"]{ --serif:'Noto Naskh Arabic',serif; --sans:'Noto Sans Arabic',system-ui,sans-serif; }
+  /* ===== Dark theme ===== */
+  html.dark{
+    --bg:#141110; --surface:#1E1A17; --ink:#F1ECE7; --ink-2:#CFC6BE; --muted:#9C938B;
+    --line:#2D2825; --line-2:#423B36; --gold:#E7C55C;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4),0 2px 8px rgba(0,0,0,.35);
+    --shadow-md:0 4px 12px rgba(0,0,0,.5),0 12px 32px rgba(0,0,0,.55);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--sans);
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+  .container{max-width:1180px;margin-inline:auto;padding-inline:24px}
+  .serif{font-family:var(--serif)}
+
+  /* ===== Announcement bar ===== */
+  .announce{
+    background:var(--ink); color:#fff; text-align:center; font-size:13.5px;
+    padding:9px 16px; letter-spacing:.4px;
+  }
+  .announce b{color:#FCD34D;font-weight:600}
+  .announce .sep{opacity:.4;margin-inline:10px}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(250,250,249,.88);
+    backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-mark{
+    width:40px;height:40px;border-radius:50%;
+    background:linear-gradient(135deg,#8a6a1f,#D4AF37 45%,#f3e3a5 55%,#8a6a1f);
+    display:grid;place-items:center;flex:none;
+  }
+  .brand-mark svg{width:20px;height:20px}
+  .brand-name{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:2px;line-height:1}
+  .brand-sub{font-size:10px;letter-spacing:3.5px;color:var(--muted);text-transform:uppercase}
+  html[dir="rtl"] .brand-sub{letter-spacing:1px}
+  nav.links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--ink-2)}
+  nav.links a{padding:6px 2px;transition:color .2s}
+  nav.links a:hover{color:var(--gold)}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .icon-btn{
+    width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    color:var(--ink-2);transition:.2s;position:relative;
+  }
+  .icon-btn:hover{background:#F5F5F4;color:var(--ink)}
+  .icon-btn svg{width:21px;height:21px}
+  .cart-count{
+    position:absolute;top:4px;inset-inline-end:2px;min-width:18px;height:18px;padding:0 5px;
+    background:var(--gold);color:#fff;border-radius:99px;font-size:11px;font-weight:600;
+    display:grid;place-items:center;opacity:0;transform:scale(.5);transition:.25s var(--ease);
+  }
+  .cart-count.show{opacity:1;transform:scale(1)}
+  .lang-btn{
+    height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line-2);
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:1px;
+    display:flex;align-items:center;gap:6px;transition:.2s;background:var(--surface);
+  }
+  .lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+  @media(max-width:820px){nav.links{display:none}}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(1200px 500px at 50% -10%, #fff 0%, transparent 60%), var(--bg);}
+  .hero-inner{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+    padding-block:72px 88px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;
+    letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;
+  }
+  html[dir="rtl"] .eyebrow{letter-spacing:.5px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.6}
+  h1{
+    font-family:var(--serif);font-size:clamp(40px,5.6vw,68px);line-height:1.12;
+    font-weight:600;letter-spacing:-.5px;margin-bottom:20px;
+  }
+  h1 em{font-style:italic;color:var(--gold)}
+  .hero p.lead{font-size:17.5px;color:var(--ink-2);max-width:46ch;margin-bottom:28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    height:54px;padding:0 30px;border-radius:99px;font-size:15px;font-weight:600;
+    transition:.25s var(--ease);letter-spacing:.3px;
+  }
+  .btn svg{width:18px;height:18px}
+  .btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:#000;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .btn-gold{background:linear-gradient(135deg,#B8860B,#D4AF37);color:#fff}
+  .btn-gold:hover{filter:brightness(1.08);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--line-2);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);background:#fff}
+  .hero-note{font-size:13.5px;color:var(--muted);margin-top:16px;display:flex;gap:8px;align-items:center}
+  .hero-note svg{width:15px;height:15px;color:var(--ok)}
+
+  .hero-visual{position:relative;display:grid;place-items:center;min-height:480px}
+  .hero-visual .glow{
+    position:absolute;width:min(520px,94%);aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,#fff 0%,#F5F0E1 40%,transparent 70%);top:50%;left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .hero-frame{
+    position:relative;width:min(400px,86%);aspect-ratio:4/4.6;border-radius:26px;overflow:hidden;
+    box-shadow:var(--shadow-md);border:1px solid var(--line);
+  }
+  .hero-frame::after{content:"";position:absolute;inset:10px;border:1px solid rgba(212,175,55,.55);border-radius:17px;pointer-events:none}
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .spark{position:absolute;width:22px;height:22px;color:#D4AF37;opacity:0;animation:twinkle 2.6s infinite}
+  .spark svg{width:100%;height:100%}
+  .spark:nth-child(2){top:14%;inset-inline-start:18%;animation-delay:.3s}
+  .spark:nth-child(3){top:34%;inset-inline-end:8%;animation-delay:1.2s;width:16px}
+  .spark:nth-child(4){bottom:20%;inset-inline-start:26%;animation-delay:2s;width:18px}
+  .spark:nth-child(5){bottom:10%;inset-inline-end:24%;animation-delay:.8s;width:14px}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(90deg)}}
+  .price-chip{
+    position:absolute;bottom:6%;inset-inline-start:0;background:var(--surface);
+    border:1px solid var(--line);border-radius:14px;padding:10px 16px;box-shadow:var(--shadow-md);
+    display:flex;align-items:center;gap:10px;animation:floaty 5.5s ease-in-out infinite .8s;
+  }
+  .price-chip .old{font-size:13px;color:var(--muted);text-decoration:line-through}
+  .price-chip .new{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold)}
+  .price-chip small{display:block;font-size:11px;color:var(--muted);letter-spacing:.5px}
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;padding-block:48px 64px;text-align:center}
+    .hero p.lead{margin-inline:auto}
+    .cta-row,.hero-note{justify-content:center}
+    .hero-visual{min-height:340px;order:-1}
+    .price-chip{inset-inline-start:6%}
+  }
+
+  /* ===== Trust strip ===== */
+  .trust{border-block:1px solid var(--line);background:var(--surface)}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .trust-item{display:flex;align-items:center;gap:12px;padding:20px 12px;justify-content:center}
+  .trust-item svg{width:22px;height:22px;color:var(--gold);flex:none}
+  .trust-item b{display:block;font-size:14px;font-weight:600}
+  .trust-item span{font-size:12.5px;color:var(--muted)}
+  @media(max-width:820px){
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .trust-item{justify-content:flex-start;padding:14px 12px}
+  }
+
+  /* ===== Sections ===== */
+  section{padding-block:76px}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head .eyebrow{margin-bottom:12px}
+  .sec-head .eyebrow::before,.sec-head .eyebrow::after{display:none}
+  h2{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:600;line-height:1.2;letter-spacing:-.3px}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:15.5px}
+
+  /* ===== Products ===== */
+  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:900px){.products{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:.3s var(--ease);display:flex;flex-direction:column;position:relative;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--line-2)}
+  .card-media{
+    position:relative;aspect-ratio:4/4.4;overflow:hidden;background:#fff;
+  }
+  .card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .55s var(--ease)}
+  .card-media img.alt{opacity:0}
+  .card:hover .card-media img.alt{opacity:1}
+  .card:hover .card-media img.main{opacity:0}
+  .badge{
+    position:absolute;top:14px;inset-inline-start:14px;background:var(--danger);color:#fff;
+    font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px;letter-spacing:.5px;z-index:2;
+  }
+  .badge.alt{background:var(--ink)}
+  .wish{
+    position:absolute;top:12px;inset-inline-end:12px;width:38px;height:38px;border-radius:50%;
+    background:rgba(255,255,255,.85);backdrop-filter:blur(4px);display:grid;place-items:center;
+    color:var(--ink-2);transition:.2s;z-index:2;
+  }
+  .wish:hover{color:#E11D48;transform:scale(1.1)}
+  .wish.on{color:#E11D48}
+  .wish svg{width:18px;height:18px}
+  .stock{
+    position:absolute;bottom:0;inset-inline:0;background:linear-gradient(transparent,rgba(28,25,23,.06));
+    padding:14px 18px 10px;font-size:12.5px;color:var(--ink-2);display:flex;align-items:center;gap:8px;
+  }
+  .stock .bar{flex:1;height:5px;background:rgba(28,25,23,.12);border-radius:99px;overflow:hidden;min-width:40px}
+  .stock .bar i{display:block;height:100%;background:var(--gold);border-radius:99px}
+  .card-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .stars{display:flex;gap:2px;color:#D4AF37}
+  .stars svg{width:15px;height:15px}
+  .stars span{color:var(--muted);font-size:12.5px;margin-inline-start:6px}
+  .card h3{font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.25}
+  .card .desc{font-size:14px;color:var(--muted);line-height:1.55}
+  .price-row{display:flex;align-items:baseline;gap:10px;margin-top:auto}
+  .price{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--ink)}
+  .price small{font-size:15px;font-weight:500;color:var(--muted);margin-inline-start:2px}
+  .price-old{font-size:15px;color:var(--muted);text-decoration:line-through}
+  .add{
+    margin-top:6px;height:50px;border-radius:14px;background:var(--ink);color:#fff;
+    font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:9px;
+    transition:.25s var(--ease);width:100%;
+  }
+  .add svg{width:18px;height:18px}
+  .add:hover{background:var(--gold);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .add:active{transform:scale(.97)}
+
+  /* ===== Gift / banner ===== */
+  .gift{background:var(--ink);color:#fff;border-radius:28px;overflow:hidden;position:relative}
+  .gift-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 56px}
+  .gift h2{color:#fff}
+  .gift h2 em{color:#D4AF37;font-style:italic}
+  .gift p{color:#D6D3D1;margin:16px 0 26px;max-width:44ch}
+  .gift ul{list-style:none;display:grid;gap:12px;margin-bottom:30px}
+  .gift li{display:flex;gap:10px;align-items:center;font-size:15px;color:#E7E5E4}
+  .gift li svg{width:17px;height:17px;color:#D4AF37;flex:none}
+  .gift-visual{display:grid;place-items:center;position:relative}
+  .gift-visual .glow{position:absolute;width:120%;aspect-ratio:1;border-radius:50%;
+    background:radial-gradient(circle,rgba(212,175,55,.16) 0%,transparent 65%)}
+  .gift-visual img{position:relative;width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:22px;border:1px solid rgba(212,175,55,.35);box-shadow:0 24px 48px rgba(0,0,0,.5)}
+
+  /* ===== Gallery strip ===== */
+  .gallery-strip{display:flex;gap:16px;overflow-x:auto;padding-bottom:14px;scrollbar-width:none}
+  .gallery-strip::-webkit-scrollbar{display:none}
+  .gallery-strip img{width:240px;aspect-ratio:1;object-fit:cover;border-radius:16px;border:1px solid var(--line);flex:none;transition:.35s var(--ease)}
+  .gallery-strip img:hover{transform:scale(1.05);box-shadow:var(--shadow-md)}
+
+  /* ===== Product details ===== */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;max-width:1080px;margin:0 auto}
+  .feature{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 24px;transition:.3s var(--ease)}
+  .feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(212,175,55,.45)}
+  .feature .ico{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#F5F0E1,#FAF7EF);display:grid;place-items:center;color:var(--gold);margin-bottom:16px}
+  .feature .ico svg{width:22px}
+  .feature h3{font-size:18px;margin-bottom:8px}
+  .feature p{color:var(--muted);font-size:14.5px;line-height:1.75}
+  @media(max-width:900px){.gift-inner{grid-template-columns:1fr;padding:44px 28px;text-align:center}
+    .gift li{justify-content:center}.gift p{margin-inline:auto}}
+
+  /* ===== Countdown banner ===== */
+  .countdown{background:linear-gradient(120deg,#FAF6EC,#FDFBF5);border:1px solid #EDE3C8;border-radius:24px;
+    padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .countdown h3{font-family:var(--serif);font-size:26px;font-weight:600}
+  .countdown p{color:var(--muted);font-size:14px;margin-top:4px}
+  .timer{display:flex;gap:10px}
+  .tick{
+    min-width:64px;background:var(--ink);color:#fff;border-radius:14px;padding:10px 8px;text-align:center;
+  }
+  .tick b{display:block;font-size:24px;font-weight:600;font-variant-numeric:tabular-nums}
+  .tick span{font-size:10.5px;opacity:.7;letter-spacing:1px}
+  @media(max-width:700px){.countdown{justify-content:center;text-align:center}}
+
+  /* ===== Testimonials ===== */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:900px){.reviews{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+  .review{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .review .stars{margin-bottom:14px}
+  .review p{font-size:14.5px;color:var(--ink-2);line-height:1.7;margin-bottom:18px}
+  .who{display:flex;align-items:center;gap:12px}
+  .avatar{
+    width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-size:18px;font-weight:700;color:#fff;flex:none;
+  }
+  .who b{font-size:14px;display:block}
+  .who span{font-size:12px;color:var(--muted)}
+  .verified{display:inline-flex;align-items:center;gap:4px;color:var(--ok);font-size:11.5px;font-weight:600}
+  .verified svg{width:13px;height:13px}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:720px;margin-inline:auto;display:grid;gap:12px}
+  .q{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:18px 22px;font-size:15px;font-weight:600;color:var(--ink);text-align:start}
+  .q button svg{width:18px;height:18px;color:var(--gold);transition:.3s var(--ease);flex:none}
+  .q.open button svg{transform:rotate(180deg)}
+  .q .a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+  .q .a p{padding:0 22px 20px;color:var(--muted);font-size:14.5px;line-height:1.7}
+
+  /* ===== Newsletter ===== */
+  .news{text-align:center}
+  .news-form{display:flex;gap:10px;max-width:460px;margin:26px auto 0}
+  .news-form input{
+    flex:1;height:54px;border:1.5px solid var(--line-2);border-radius:99px;padding:0 22px;
+    font-family:inherit;font-size:15px;background:#fff;color:var(--ink);
+  }
+  .news-form input:focus{outline:none;border-color:var(--gold)}
+  @media(max-width:520px){.news-form{flex-direction:column}}
+
+  /* ===== Footer ===== */
+  footer{background:var(--ink);color:#A8A29E;padding-block:56px 28px;margin-top:20px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+  @media(max-width:820px){.foot-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.foot-grid{grid-template-columns:1fr}}
+  footer h4{color:#fff;font-size:14px;font-weight:600;letter-spacing:1px;margin-bottom:16px}
+  footer .brand-name{color:#fff}
+  footer ul{list-style:none;display:grid;gap:10px;font-size:14px}
+  footer ul a:hover{color:#D4AF37}
+  footer p{font-size:14px;line-height:1.7;max-width:34ch;margin-top:12px}
+  .socials{display:flex;gap:10px;margin-top:18px}
+  .socials a{width:40px;height:40px;border-radius:12px;border:1px solid #44403C;display:grid;place-items:center;transition:.2s}
+  .socials a:hover{border-color:#D4AF37;color:#D4AF37}
+  .socials svg{width:17px;height:17px}
+  .foot-bottom{border-top:1px solid #292524;padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px}
+
+  /* ===== Cart drawer ===== */
+  .overlay{position:fixed;inset:0;background:rgba(28,25,23,.45);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .drawer{
+    position:fixed;top:0;inset-inline-end:0;height:100dvh;width:min(420px,100vw);background:#fff;
+    z-index:100;display:flex;flex-direction:column;transform:translateX(calc(100% + 40px));
+    transition:transform .35s var(--ease);box-shadow:var(--shadow-md);
+  }
+  html[dir="rtl"] .drawer{transform:translateX(calc(-100% - 40px))}
+  .drawer.open{transform:translateX(0)!important}
+  .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-family:var(--serif);font-size:24px;font-weight:600}
+  .drawer-items{flex:1;overflow-y:auto;padding:20px 24px;display:grid;gap:16px;align-content:start}
+  .cart-empty{text-align:center;color:var(--muted);padding:48px 0}
+  .cart-empty svg{width:52px;height:52px;margin:0 auto 14px;color:var(--line-2)}
+  .c-item{display:flex;gap:14px;align-items:center}
+  .c-thumb{width:72px;height:72px;border-radius:12px;background:#F5F5F4;overflow:hidden;flex:none}
+  .c-thumb img{width:100%;height:100%;object-fit:cover}
+  .c-item .info{flex:1;min-width:0}
+  .c-item b{font-size:14px;display:block;line-height:1.35}
+  .c-item .c-price{font-size:14px;color:var(--gold);font-weight:600;margin-top:3px}
+  .qty{display:flex;align-items:center;gap:2px;border:1px solid var(--line);border-radius:10px;margin-top:6px;width:max-content}
+  .qty button{width:30px;height:30px;display:grid;place-items:center;color:var(--ink-2);font-size:16px}
+  .qty button:hover{color:var(--gold)}
+  .qty span{min-width:26px;text-align:center;font-size:14px;font-weight:600}
+  .rm{color:var(--muted);padding:6px;align-self:flex-start}
+  .rm:hover{color:var(--danger)}
+  .rm svg{width:16px;height:16px}
+  .drawer-foot{border-top:1px solid var(--line);padding:20px 24px;display:grid;gap:14px;background:#FAFAF9}
+  .total-row{display:flex;justify-content:space-between;font-size:15px;color:var(--ink-2)}
+  .total-row.grand{font-size:18px;font-weight:700;color:var(--ink)}
+  .total-row.grand .val{font-family:var(--serif);font-size:26px;color:var(--gold)}
+  .ship-note{font-size:12.5px;color:var(--ok);display:flex;gap:6px;align-items:center}
+  .ship-note svg{width:14px;height:14px}
+
+  /* ===== Toast ===== */
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);z-index:120;
+    background:var(--ink);color:#fff;padding:13px 22px;border-radius:99px;font-size:14px;
+    display:flex;align-items:center;gap:9px;opacity:0;transition:.35s var(--ease);pointer-events:none;
+    box-shadow:var(--shadow-md);
+  }
+  .toast.show{transform:translate(-50%,0);opacity:1}
+  .toast svg{width:17px;height:17px;color:#4ADE80}
+
+  /* ===== Dark mode fixes ===== */
+  body{transition:background-color .35s ease,color .35s ease}
+  header,.drawer,.q,.card-media,.c-thumb,.news-form input{transition:background-color .35s ease,border-color .35s ease}
+  html.dark header{background:rgba(20,17,16,.88)}
+  html.dark .icon-btn:hover{background:#2A2521}
+  html.dark .announce{background:#0C0A09}
+  html.dark .btn-primary{background:#F1ECE7;color:#1C1917}
+  html.dark .btn-primary:hover{background:#fff;color:#1C1917}
+  html.dark .btn-ghost:hover{background:var(--surface)}
+  html.dark .hero{background:radial-gradient(1200px 500px at 50% -10%, #2A2420 0%, transparent 60%), var(--bg)}
+  html.dark .hero-visual .glow{background:radial-gradient(circle,#332B24 0%,#241E1A 40%,transparent 70%)}
+  html.dark .card-media{background:#26221E!important}
+  html.dark .add{background:#F1ECE7;color:#1C1917}
+  html.dark .add:hover{background:#fff;color:#1C1917}
+  html.dark .tick{background:#0C0A09}
+  html.dark .news-form input{background:var(--surface)}
+  html.dark .gift{background:#0C0A09}
+  html.dark footer{background:#0C0A09}
+  html.dark .drawer{background:var(--surface)}
+  html.dark .drawer-foot{background:#191513}
+  html.dark .c-thumb{background:#2D2825}
+  html.dark .toast{background:#F1ECE7;color:#1C1917}
+  /* theme toggle icons */
+  #themeBtn .ico-sun{display:none}
+  html.dark #themeBtn .ico-sun{display:block}
+  html.dark #themeBtn .ico-moon{display:none}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gSilver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/><stop offset=".35" stop-color="#cbd5e1"/>
+      <stop offset=".55" stop-color="#94a3b8"/><stop offset=".75" stop-color="#e2e8f0"/><stop offset="1" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="gDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b3b40"/><stop offset=".5" stop-color="#0c0c0f"/><stop offset="1" stop-color="#27272a"/>
+    </linearGradient>
+    <radialGradient id="gWhiteGem" cx=".38" cy=".32" r=".8">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eef4fb"/><stop offset="1" stop-color="#c9d8ea"/>
+    </radialGradient>
+    <radialGradient id="gBlackGem" cx=".38" cy=".3" r=".85">
+      <stop offset="0" stop-color="#52525b"/><stop offset=".45" stop-color="#18181b"/><stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <radialGradient id="gAmethyst" cx=".38" cy=".3" r=".85">
+      <stop offset="0" stop-color="#c084fc"/><stop offset=".45" stop-color="#7e22ce"/><stop offset="1" stop-color="#4c1d95"/>
+    </radialGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B8860B"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#8a6a1f"/>
+    </linearGradient>
+    <!-- heart pendant -->
+    <g id="chain"><path d="M100 0 L88 46 M100 0 L112 46" stroke="url(#gSilver)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <path d="M84 12 Q100 6 116 12" stroke="url(#gSilver)" stroke-width="3" fill="none" opacity=".7"/></g>
+    <g id="bail"><path d="M96 40 q4 -12 8 0 l-2 10 q-2 6 -4 0 z" fill="url(#gSilver)"/><ellipse cx="100" cy="55" rx="7" ry="5" fill="none" stroke="url(#gSilver)" stroke-width="4"/></g>
+    <path id="heartPath" d="M100 145 C 60 115, 48 78, 66 58 C 82 40, 100 52, 100 66 C 100 52, 118 40, 134 58 C 152 78, 140 115, 100 145 Z"/>
+    <g id="halo"><circle cx="100" cy="100" r="98" fill="none" stroke="url(#gSilver)" stroke-width="5" stroke-dasharray="1 6" stroke-linecap="round"/></g>
+    <path id="star" d="M12 1l2.4 7.2H22l-6 4.5 2.3 7.3-6.3-4.5-6.3 4.5L8 12.7l-6-4.5h7.6z"/>
+    <path id="sparkIco" d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/>
+    <path id="bagIco" d="M6 7V6a6 6 0 1 1 12 0v1h3a1 1 0 0 1 1 1l-1.2 13.1A2 2 0 0 1 18.8 23H5.2a2 2 0 0 1-2-1.9L2 8a1 1 0 0 1 1-1h3zm2 0h8V6a4 4 0 1 0-8 0v1z"/>
+    <path id="heartIco" d="M12 21s-7.5-4.6-10-9.3C.3 8.6 2.4 5 6 5c2.2 0 3.8 1.2 6 3.6C14.2 6.2 15.8 5 18 5c3.6 0 5.7 3.6 4 6.7C19.5 16.4 12 21 12 21z"/>
+    <path id="checkIco" d="M9 18.2 3.5 12.7l1.9-1.9L9 14.4l9.6-9.6 1.9 1.9z"/>
+    <path id="chevIco" d="M12 15.5 5.5 9l1.4-1.4L12 12.7l5.1-5.1L18.5 9z"/>
+    <path id="closeIco" d="M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+    <path id="trashIco" d="M9 3h6l1 2h4v2H4V5h4l1-2zM6 9h12l-.9 12.1A2 2 0 0 1 15.1 23H8.9a2 2 0 0 1-2-1.9L6 9z"/>
+    <path id="truckIco" d="M1 6h13v10H1zM14 9h4l3 3v4h-7zM5.5 18.5A2.5 2.5 0 1 0 5.5 13.5 2.5 2.5 0 0 0 5.5 18.5zm12 0a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+    <path id="giftIco" d="M20 7h-2.2A3 3 0 0 0 12 4.2 3 3 0 0 0 6.2 7H4a1 1 0 0 0-1 1v4h8V7h2v5h8V8a1 1 0 0 0-1-1zM11 22H5a1 1 0 0 1-1-1v-7h7v7zm2 0V14h7v7a1 1 0 0 1-1 1h-6z"/>
+    <path id="shieldIco" d="M12 2 4 5v6c0 5.5 3.4 9.4 8 11 4.6-1.6 8-5.5 8-11V5l-8-3zm-1.2 14.5-4-4 1.4-1.4 2.6 2.6 5.4-5.4 1.4 1.4-6.8 6.8z"/>
+    <path id="returnIco" d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/>
+    <path id="waIco" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-2.7-.9-4.5-2.7-5.9-5.2-.4-.8-.8-1.9-.3-2.7.3-.5.9-.8 1.3-.9h.6c.2 0 .4 0 .6.5l.8 2c.1.2 0 .4-.1.6l-.5.6c-.2.2-.3.4-.1.7.7 1.2 1.9 2.3 3.2 3 .3.1.5.1.7-.1l.8-.9c.2-.3.4-.2.7-.1l1.9.9c.3.2.4.3.4.5z"/>
+    <path id="instaIco" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.8.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.7-.3 1.8-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.8.2.4.3.7.6 1 .3.3.6.5 1 .6.3.1.7.3 1.8.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.8-.3.4-.2.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.7.3-1.8.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.8-.2-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.7-.3-1.8-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 7.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zm5.6-7.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+    <path id="fbIco" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.9.3-1.6 1.7-1.6h1.5V4.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.7H7.8V14h2.7v8h3z"/>
+    <path id="cartPlusIco" d="M6 7V6a6 6 0 1 1 12 0v1h3a1 1 0 0 1 1 1l-1.2 13.1A2 2 0 0 1 18.8 23H5.2a2 2 0 0 1-2-1.9L2 8a1 1 0 0 1 1-1h3zm4 6v-2h4v2h2v4h-2v2h-4v-2H8v-4h2z"/>
+  </defs>
+</svg>
+
+<div class="announce" id="announce">
+  <span data-i="a1">التوصيل مشمول في السعر</span><span class="sep">✦</span>
+  <span data-i="a2">دفع عند الاستلام</span><span class="sep">✦</span>
+  <span><b data-i="a3">خصم 33%</b> <span data-i="a4">لفترة محدودة — 800 جنيه بدل 1,200</span></span>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="LUMIÈRE">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="#fff"><use href="#heartIco"/></svg></span>
+      <span>
+        <span class="brand-name serif">LUMIÈRE</span>
+        <span class="brand-sub" data-i="brandSub">مجوهرات فاخرة</span>
+      </span>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#products" data-i="navShop">المجموعة</a>
+      <a href="#gift" data-i="navGift">الهدية</a>
+      <a href="#reviews" data-i="navReviews">آراء عميلاتنا</a>
+      <a href="#faq" data-i="navFaq">أسئلة شائعة</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="الوضع الداكن / الفاتح">
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 13.3A9.6 9.6 0 0 1 10.7 2.4 9.6 9.6 0 1 0 21.6 13.3z"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <button class="lang-btn" id="langBtn" aria-label="Switch language">EN <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><use href="#returnIco"/></svg></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="currentColor"><use href="#bagIco"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow serif" data-i="h-eyebrow">مجموعة قلب ٢٠٢٦</span>
+        <h1 data-i-html="h-title">الفخامة اللي <em>تُلبس</em><br>على القلب</h1>
+        <p class="lead" data-i="h-lead">قلوب فولاذ مقاوم للصدأ بلمسة فضية مصقولة وأحجار زركونيا فاخرة — قطعة واحدة تحوّل أي إطلالة لذكريات. هدية تفضل في الذاكرة، وإطلالة تخطف الأنظار.</p>
+        <div class="cta-row">
+          <a href="#products" class="btn btn-primary" data-i="h-cta">تسوّقي المجموعة</a>
+          <a href="#gift" class="btn btn-ghost" data-i="h-cta2">هدية جاهزة 🎁</a>
+        </div>
+        <div class="hero-note">
+          <svg viewBox="0 0 24 24" fill="currentColor"><use href="#truckIco"/></svg>
+          <span data-i="h-note">التوصيل مشمول في السعر + دفع عند الاستلام لكل مصر</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow"></div>
+        <div class="hero-frame">
+          <img src="images/white-model.jpg" alt="قلب كريستال أبيض على الموديل" width="679" height="679">
+        </div>
+        <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#sparkIco"/></svg></span>
+        <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#sparkIco"/></svg></span>
+        <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#sparkIco"/></svg></span>
+        <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#sparkIco"/></svg></span>
+        <div class="price-chip">
+          <div><small data-i="h-chip">يبدأ من</small><span class="old serif">1,200</span></div>
+          <div class="new serif">800 <span style="font-size:14px">ج.م</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="container trust-grid">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#truckIco"/></svg><div><b data-i="t1">التوصيل مشمول</b><span data-i="t1s">في السعر — بدون رسوم</span></div></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#shieldIco"/></svg><div><b data-i="t2">فولاذ مقاوم للصدأ</b><span data-i="t2s">بلمسة فضية — ضد التأكسد</span></div></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#returnIco"/></svg><div><b data-i="t3">استبدال 14 يوم</b><span data-i="t3s">بدون أي أسئلة</span></div></div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#giftIco"/></svg><div><b data-i="t4">علبة هدية فاخرة</b><span data-i="t4s">مع كل قطعة مجاناً</span></div></div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow serif" data-i="p-eyebrow">الأكثر طلباً</span>
+        <h2 data-i="p-title">مجموعة القلب</h2>
+        <p data-i="p-sub">سبع قطع أسطورية… تبدأ من 700 جنيه فقط. الكمية محدودة وبتخلص بسرعة.</p>
+      </div>
+      <div class="products">
+
+        <!-- Product 1: White -->
+        <article class="card reveal" data-id="white" data-price="800">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" data-i="b33">خصم 33%</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/white-main.jpg" alt="قلب كريستال أبيض بلمسة فضية" width="879" height="879">
+            <img class="alt" src="images/white-model.jpg" alt="قلب كريستال أبيض على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>7</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:28%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="4.9">★★★★★<span data-i="r1">(4.9 · 212)</span></div>
+            <h3 data-i="n1">قلب كريستال أبيض</h3>
+            <p class="desc" data-i="d1">حجر زركون أبيض قلّب مصقول بإطار من الألماس الصغير — النقاء في أبسط صوره.</p>
+            <div class="price-row"><span class="price serif">800 <small data-i="egp">ج.م</small></span><span class="price-old serif">1,200</span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 2: Black -->
+        <article class="card reveal" data-id="black" data-price="800">
+          <div class="card-media" style="background:#fff">
+            <span class="badge alt" data-i="best">الأكثر مبيعاً 🔥</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/black-main.jpg" alt="قلب أسود بلمسة فضية" width="741" height="741">
+            <img class="alt" src="images/black-model.jpg" alt="قلب أسود على الموديل" loading="lazy">
+            <div class="stock" style="color:#d6d3d1"><span data-i="stock">متبقي</span> <b>4</b> <span data-i="pieces">قطع فقط</span><span class="bar" style="background:rgba(255,255,255,.2)"><i style="width:16%;background:#D4AF37"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="5">★★★★★<span data-i="r2">(5.0 · 186)</span></div>
+            <h3 data-i="n2">قلب منتصف الليل الأسود</h3>
+            <p class="desc" data-i="d2">حجر أسود غامق كالعين بحدّة كريستال من كل الجهات — جرأة تسكن القلب.</p>
+            <div class="price-row"><span class="price serif">800 <small data-i="egp">ج.م</small></span><span class="price-old serif">1,200</span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 3: Amethyst -->
+        <article class="card reveal" data-id="amethyst" data-price="800">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" style="background:linear-gradient(135deg,#6D28D9,#9333EA)" data-i="newB">وصل حديثاً ✨</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/amethyst-main.jpg" alt="قلب التياج الأميثيست بلمسة فضية" width="679" height="679">
+            <img class="alt" src="images/amethyst-model.jpg" alt="قلب التياج الأميثيست على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>9</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:36%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="4.8">★★★★★<span data-i="r3">(4.8 · 94)</span></div>
+            <h3 data-i="n3">قلب التياج الأميثيست</h3>
+            <p class="desc" data-i="d3">حجر أميثيست بنفسجي ملكي يتوّجه تاج بلمسة فضية بأحجار بيضاء — لكل إحساس ملكي.</p>
+            <div class="price-row"><span class="price serif">800 <small data-i="egp">ج.م</small></span><span class="price-old serif">1,200</span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 4: Gold Heart of Love -->
+        <article class="card reveal" data-id="gold" data-price="1000">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" style="background:linear-gradient(135deg,#B8860B,#D4AF37)" data-i="newB">وصل حديثاً ✨</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/gold-main.jpg" alt="قلب الحب الدهبي بحجر الإسقاط" width="679" height="679">
+            <img class="alt" src="images/gold-model.jpg" alt="قلب الحب الدهبي على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>6</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:24%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="4.9">★★★★★<span data-i="r4">(4.9 · 58)</span></div>
+            <h3 data-i="n4">قلب الحب الدهبي</h3>
+            <p class="desc" data-i="d4">قلب دهبي أنيق يحتضن حجر إسقاط نانو سرّي — وَلّعي إضاءة الموبايل عليه واقري «بحبك» بـ100 لغة 💛</p>
+            <div class="price-row"><span class="price serif">1,000 <small data-i="egp">ج.م</small></span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 5: Silver Winged Heart -->
+        <article class="card reveal" data-id="wing" data-price="900">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" style="background:linear-gradient(135deg,#7C3AED,#A855F7)" data-i="newB">وصل حديثاً ✨</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/wing-main.jpg" alt="قلب الجناح الفضي بالأميثيست" width="679" height="679">
+            <img class="alt" src="images/wing-model.jpg" alt="قلب الجناح الفضي على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>5</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:20%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="5">★★★★★<span data-i="r5">(5.0 · 41)</span></div>
+            <h3 data-i="n5">قلب الجناح الفضي</h3>
+            <p class="desc" data-i="d5">جناحا ملاك من الفضة يحضنان قلب أميثيست بنفسجي، وسلسلة متدلية بتختمها بقلب صغير — حنونة ووقورة.</p>
+            <div class="price-row"><span class="price serif">900 <small data-i="egp">ج.م</small></span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 6: Love Memories Silver -->
+        <article class="card reveal" data-id="ring" data-price="700">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" style="background:linear-gradient(135deg,#64748B,#94A3B8)" data-i="newB">وصل حديثاً ✨</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/ring-main.jpg" alt="قلادة ذكريات الحب الفضية بحجر الإسقاط" width="679" height="679">
+            <img class="alt" src="images/ring-model.jpg" alt="قلادة ذكريات الحب على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>8</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:32%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="4.9">★★★★★<span data-i="r6">(4.9 · 36)</span></div>
+            <h3 data-i="n6">قلب الذكريات الفضي</h3>
+            <p class="desc" data-i="d6">دائرة قلوب فضية صغيرة تحيط بحجر إسقاط أسود سرّي — وَلّعي إضاءة الموبايل واقري «بحبك» بـ100 لغة 💙</p>
+            <div class="price-row"><span class="price serif">700 <small data-i="egp">ج.م</small></span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+        <!-- Product 7: I Love You Star -->
+        <article class="card reveal" data-id="star" data-price="1200">
+          <div class="card-media" style="background:#fff">
+            <span class="badge" style="background:linear-gradient(135deg,#B76E79,#E8B4B8)" data-i="b29">خصم 29%</span>
+            <button class="wish" aria-label="wishlist"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></button>
+            <img class="main" src="images/star-main.jpg" alt="قلادة أحبك النجمية بحجر الإسقاط" width="679" height="679">
+            <img class="alt" src="images/star-model.jpg" alt="قلادة أحبك النجمية على الموديل" loading="lazy">
+            <div class="stock"><span data-i="stock">متبقي</span> <b>6</b> <span data-i="pieces">قطع فقط</span><span class="bar"><i style="width:24%"></i></span></div>
+          </div>
+          <div class="card-body">
+            <div class="stars" aria-label="4.9">★★★★★<span data-i="r7">(4.9 · 63)</span></div>
+            <h3 data-i="n7">قلادة أحبك النجمية</h3>
+            <p class="desc" data-i="d7">نجمة عتيقة لامعة تحيط بحجر إسقاط سحري — وَلّعي فلاش الموبايل واقري «بحبك» بـ100 لغة ✨ فضة مضادة للحساسية بلمعان يدوم.</p>
+            <div class="price-row"><span class="price serif">1,200 <small data-i="egp">ج.م</small></span><span class="price-old serif">1,700</span></div>
+            <button class="add"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#cartPlusIco"/></svg><span data-i="add">أضيفي للسلة</span></button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow serif" data-i="gal-eyebrow">لوميير في الحياة</span>
+        <h2 data-i="gal-title">من إطلالات عميلاتنا الحقيقية</h2>
+      </div>
+      <div class="gallery-strip reveal">
+        <img src="images/amethyst-model.jpg" alt="قلب التياج الأميثيست على موديل" loading="lazy">
+        <img src="images/black-model2.jpg" alt="قلب أسود على موديل" loading="lazy">
+        <img src="images/white-model.jpg" alt="قلب كريستال أبيض على موديل" loading="lazy">
+        <img src="images/amethyst-collage.jpg" alt="إطلالات قلب التياج" loading="lazy">
+        <img src="images/black-model.jpg" alt="قلب أسود على موديل بلوزة سوداء" loading="lazy">
+        <img src="images/amethyst-velvet.jpg" alt="قلب التياج على مخمل بنفسجي" loading="lazy">
+        <img src="images/black-detail.jpg" alt="تفاصيل قلب أسود" loading="lazy">
+        <img src="images/amethyst-dark.jpg" alt="قلب التياج على خلفية داكنة" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAILS -->
+  <section id="details">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow serif" data-i="d-eyebrow">كل التفاصيل</span>
+        <h2 data-i="d-title">تفاصيل القلادة اللي هتعشقيها</h2>
+      </div>
+      <div class="features reveal">
+        <article class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#shieldIco"/></svg></span>
+          <h3 data-i="d1t">مادة عالية الجودة</h3>
+          <p data-i="d1s">صُنعت القلادة الرقيقة من فولاذ مقاوم للصدأ عالي الجودة، بلمسة نهائية فضية مصقولة وقلادة على شكل قلب من الزركونيا المكعبة المتلألئة.</p>
+        </article>
+        <article class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg></span>
+          <h3 data-i="d2t">تصميم هالة القلب</h3>
+          <p data-i="d2s">الحجر العميق على شكل قلب محاط بهالة من الزركونيا المكعبة الشفافة — مظهر كلاسيكي أنيق يلتقط الضوء بشكل جميل.</p>
+        </article>
+        <article class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#sparkIco"/></svg></span>
+          <h3 data-i="d3t">سلسلة رقيقة قابلة للتعديل</h3>
+          <p data-i="d3s">سلسلة رقيقة قابلة للتعديل تناسب الرقبة بشكل مريح، وتسمح لك بتحديد الطول المناسب لأشكال الرقبة المختلفة.</p>
+        </article>
+        <article class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg></span>
+          <h3 data-i="d4t">أناقة يومية متعددة الاستخدامات</h3>
+          <p data-i="d4s">مثالية للارتداء اليومي أو المناسبات الخاصة — تتناغم بسهولة مع الفساتين وملابس العمل وإطلالات السهرة.</p>
+        </article>
+        <article class="feature">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#giftIco"/></svg></span>
+          <h3 data-i="d5t">هدية رومانسية لها</h3>
+          <p data-i="d5s">هدية مجوهرات مميزة لصديقة أو زوجة أو ابنة — في عيد الحب أو أعياد الميلاد أو ذكرى الزواج أو أي مناسبة تحتفلين فيها بالحب.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="countdown reveal">
+        <div>
+          <h3 data-i="cd-title">العرض بينتهي قريباً ⏳</h3>
+          <p data-i="cd-sub">خصم 33% وعلبة الهدية المجانية — لحد منتصف الليل النهاردة</p>
+        </div>
+        <div class="timer" id="timer" aria-live="off">
+          <div class="tick"><b id="tH">00</b><span data-i="tH">ساعة</span></div>
+          <div class="tick"><b id="tM">00</b><span data-i="tM">دقيقة</span></div>
+          <div class="tick"><b id="tS">00</b><span data-i="tS">ثانية</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section id="gift">
+    <div class="container">
+      <div class="gift reveal">
+        <div class="gift-inner">
+          <div>
+            <span class="eyebrow serif" style="color:#D4AF37" data-i="g-eyebrow">هدية ما تتقالش</span>
+            <h2 data-i-html="g-title">كل قطعة… <em>توصل هدية جاهزة</em></h2>
+            <p data-i="g-lead">علبة مخملية فاخرة، كرت إهداء بخط مخصوص، وكيس شيك — كل ده ببلاش مع كل أوردر. افتحي البكس وقدميها زي ما هي.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg><span data-i="g1">علبة مخملية بلون المجموعة</span></li>
+              <li><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg><span data-i="g2">كرت إهداء برسالة من اختيارك</span></li>
+              <li><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg><span data-i="g3">كيس حفظ ضد الأكسدة</span></li>
+              <li><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg><span data-i="g4">شهادة ضمان الجودة</span></li>
+            </ul>
+            <a href="#products" class="btn btn-gold"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#giftIco"/></svg><span data-i="g-cta">اطلبي هديتك دلوقتي</span></a>
+          </div>
+          <div class="gift-visual">
+            <div class="glow"></div>
+            <img src="images/star-rose.jpg" alt="قلادة أحبك النجمية مع دائرة الإسقاط — بحبك بـ100 لغة" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" style="padding-top:0">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="eyebrow serif" data-i="r-eyebrow">4.9 من 5 — أكثر من 490 تقييم</span>
+        <h2 data-i="r-title">بتقولوا إيه عن لوميير؟</h2>
+      </div>
+      <div class="reviews">
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p data-i="rv1">"جت أهدى من الصور بجد 💔 اللون الأسود شكله فخم جداً ولبسته في خطوبة صاحبتي وكلهم سألوني عليه. التغليف لوحده تحفة!"</p>
+          <div class="who"><span class="avatar" style="background:linear-gradient(135deg,#9333EA,#6D28D9)">س</span><div><b>سارة م.</b><span data-i="v1">عميلة موثقة — القاهرة</span></div></div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p data-i="rv2">"طلبت القلب الأبيض هدية لأمي ووصل في يومين بعلبة مخمل. اللمسة الفضية فخمة فعلاً وما لونتش ولا صدها بعد شهرين من الاستخدام اليومي."</p>
+          <div class="who"><span class="avatar" style="background:linear-gradient(135deg,#0EA5E9,#6366F1)">ن</span><div><b>نور ع.</b><span data-i="v2">عميلة موثقة — الإسكندرية</span></div></div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p data-i="rv3">"قلب التياج ده سرقة في 800 جنيه 😍 شكله أغلى بكتير، وهديته لبنت خالتي خلتها تبكي. أكيد هطلع باقي الألوان."</p>
+          <div class="who"><span class="avatar" style="background:linear-gradient(135deg,#D4AF37,#B8860B)">م</span><div><b>مريم ك.</b><span data-i="v3">عميلة موثقة — المنصورة</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="container">
+      <div class="sec-head reveal"><h2 data-i="f-title">أسئلة بتتكرر كتير</h2></div>
+      <div class="faq reveal">
+        <div class="q"><button><span data-i="fq1">القطعة بتصدّأ أو تتأكسد؟</span><svg viewBox="0 0 24 24" fill="currentColor"><use href="#chevIco"/></svg></button>
+          <div class="a"><p data-i="fa1">لأ خالص — كل قطعنا فولاذ مقاوم للصدأ عالي الجودة بلمسة فضية مصقولة، ضد التأكسد والصدأ، ومعاها شهادة ضمان. لو أي مشكلة — استبدال فوري أو استرجاع كامل.</p></div></div>
+        <div class="q"><button><span data-i="fq2">إمتى يوصل الأوردر؟</span><svg viewBox="0 0 24 24" fill="currentColor"><use href="#chevIco"/></svg></button>
+          <div class="a"><p data-i="fa2">من 2 لـ 4 أيام عمل لكل المحافظات، والتوصيل مشمول في السعر والدفع كاش عند الاستلام — مش هتدفع حاجة قبل ما تستلمي وتعايني.</p></div></div>
+        <div class="q"><button><span data-i="fq3">ممكن أستبدل أو أرجّع؟</span><svg viewBox="0 0 24 24" fill="currentColor"><use href="#chevIco"/></svg></button>
+          <div class="a"><p data-i="fa3">عندك 14 يوم كاملة من الاستلام للاستبدال أو الاسترجاع بدون أي أسئلة، بشرط إن القطعة بحالتها وبعلبتها.</p></div></div>
+        <div class="q"><button><span data-i="fq4">أقدر أكتب رسالة على كرت الهدية؟</span><svg viewBox="0 0 24 24" fill="currentColor"><use href="#chevIco"/></svg></button>
+          <div class="a"><p data-i="fa4">طبعاً — اكتبي رسالتك في خانة الملاحظات وقت الأوردر أو ابعتيها لنا واتساب، وهنكتبها بخط مخصوص على كرت الإهداء ببلاش.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news" style="padding-top:0">
+    <div class="container reveal">
+      <h2 data-i="nl-title">الوصول المبكر للإصدارات الجديدة</h2>
+      <p style="color:var(--muted);margin-top:10px" data-i="nl-sub">سيبي إيميلك — الإصدارات المحدودة بتوصل لميناء القائمة قبل أي حد، وخصم 10% على أول أوردر.</p>
+      <form class="news-form" id="newsForm">
+        <input type="email" required id="newsEmail" data-i-ph="nl-ph" placeholder="اكتبي إيميلك هنا…">
+        <button class="btn btn-primary" type="submit" data-i="nl-btn">اشتركي</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="#fff"><use href="#heartIco"/></svg></span>
+          <span><span class="brand-name serif">LUMIÈRE</span><br><span class="brand-sub" data-i="brandSub">مجوهرات فاخرة</span></span>
+        </a>
+        <p data-i="ft-about">مجوهرات بلمسة فضية فاخرة وتصاميم قلب مميزة. جودة عالية متينة، أسعار تديك فرصة، وهدية تفضل في الذاكرة.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#instaIco"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#fbIco"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#waIco"/></svg></a>
+        </div>
+      </div>
+      <div><h4 data-i="ft-shop">المتجر</h4><ul>
+        <li><a href="#products" data-i="navShop">المجموعة</a></li>
+        <li><a href="#gift" data-i="navGift">الهدية</a></li>
+        <li><a href="#reviews" data-i="navReviews">آراء عميلاتنا</a></li>
+      </ul></div>
+      <div><h4 data-i="ft-help">مساعدة</h4><ul>
+        <li><a href="#faq" data-i="fq2s">الشحن والتوصيل</a></li>
+        <li><a href="#faq" data-i="fq3s">الاستبدال والاسترجاع</a></li>
+        <li><a href="#faq" data-i="fq4s">كرت الإهداء</a></li>
+      </ul></div>
+      <div><h4 data-i="ft-contact">تواصلي معنا</h4><ul>
+        <li>0100 000 0000</li>
+        <li>hello@lumiere.jewelry</li>
+        <li data-i="ft-hours">يومياً 10ص — 11م</li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 LUMIÈRE — <span data-i="ft-rights">جميع الحقوق محفوظة</span></span>
+      <span data-i="ft-made">صُنع بحب في مصر 🇪🇬</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3 data-i="cart-title">سلة التسوق</h3>
+    <button class="icon-btn" id="closeCart" aria-label="Close"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#closeIco"/></svg></button>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span data-i="subtotal">المجموع الفرعي</span><span class="serif" id="subTotal" style="font-size:18px">0 ج.م</span></div>
+    <div class="total-row"><span data-i="shipping">الشحن</span><span style="color:var(--ok);font-weight:600" data-i="free">مجاني</span></div>
+    <div class="total-row grand"><span data-i="total">الإجمالي</span><span class="val" id="grandTotal">0 ج.م</span></div>
+    <div class="ship-note"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#truckIco"/></svg><span data-i="ship-note">دفع عند الاستلام — التوصيل 2-4 أيام</span></div>
+    <button class="btn btn-gold" id="checkoutBtn" style="width:100%">
+      <svg viewBox="0 0 24 24" fill="currentColor"><use href="#waIco"/></svg><span data-i="checkout">إتمام الأوردر واتساب</span>
+    </button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#checkIco"/></svg><span id="toastMsg"></span></div>
+
+<script>
+/* ============ CONFIG — عدّلي الرقم ده برقم واتسابك ============ */
+const WA_NUMBER = "201000000000"; // بدون + أو مسافات
+
+/* ============ i18n ============ */
+const I18N = {
+  en: {
+    a1:"Shipping included in the price", a2:"Cash on delivery", a3:"33% OFF", a4:"Limited time — EGP 800 instead of 1,200",
+    brandSub:"Fine Jewelry",
+    navShop:"Collection", navGift:"Gifting", navReviews:"Reviews", navFaq:"FAQ", fq2s:"Shipping & Delivery", fq3s:"Returns & Exchange", fq4s:"Gift Card",
+    "h-eyebrow":"The Heart Collection 2026",
+    "h-title":'Luxury, worn <em>on the heart</em>',
+    "h-lead":"Stainless steel hearts with a polished silver finish and fine zirconia stones — one piece that turns any look into a memory. A gift that stays, a look that steals the spotlight.",
+    "h-cta":"Shop the Collection", "h-cta2":"Ready-to-gift 🎁", "h-note":"Shipping included + cash on delivery, all over Egypt", "h-chip":"Starting from",
+    t1:"Shipping Included", t1s:"In the price — no extra fees", t2:"Stainless Steel", t2s:"Polished silver finish, tarnish-free", t3:"14-Day Exchange", t3s:"No questions asked", t4:"Luxury Gift Box", t4s:"Free with every piece",
+    "p-eyebrow":"Best Sellers", "p-title":"The Heart Collection", "p-sub":"Seven iconic pieces… from just EGP 700. Limited stock, selling fast.",
+    "gal-eyebrow":"LUMIÈRE in real life", "gal-title":"From real client looks",
+    "d-eyebrow":"Every Detail", "d-title":"The details you'll fall for",
+    "d1t":"Premium Material", "d1s":"Crafted from high-quality stainless steel with a polished silver finish and a sparkling cubic zirconia heart pendant.",
+    "d2t":"Heart Halo Design", "d2s":"The deep heart-shaped stone is framed by a halo of clear cubic zirconia — a classic, elegant look that catches the light beautifully.",
+    "d3t":"Adjustable Delicate Chain", "d3s":"A delicate adjustable chain designed to sit comfortably on the neck, letting you customize the length to suit different necklines.",
+    "d4t":"Everyday Versatile Elegance", "d4s":"Perfect for daily wear or special occasions — pairs effortlessly with dresses, work outfits, and evening looks.",
+    "d5t":"A Romantic Gift for Her", "d5s":"A standout jewelry gift for a girlfriend, wife, or daughter — for Valentine's Day, birthdays, anniversaries, or any occasion where you celebrate love.",
+    b33:"33% OFF", b29:"29% OFF", best:"Best Seller 🔥", newB:"Just Landed ✨",
+    stock:"Only", pieces:"left", egp:"EGP", add:"Add to Cart", r1:"(4.9 · 212)", r2:"(5.0 · 186)", r3:"(4.8 · 94)", r4:"(4.9 · 58)", r5:"(5.0 · 41)", r6:"(4.9 · 36)", r7:"(4.9 · 63)",
+    n1:"White Crystal Heart", d1:"A brilliant-cut white zircon heart in a halo of micro pavé — purity in its simplest form.",
+    n2:"Midnight Black Heart", d2:"A deep black stone edged in sparkling crystals — boldness that lives on the heart.",
+    n3:"Amethyst Crown Heart", d3:"Royal purple amethyst crowned with a silver-finish tiara of white stones — for every queenly feeling.",
+    n4:"Heart of Love — Gold", d4:"An elegant gold heart holding a secret nano-engraved stone — shine your phone light through it and reveal 'I Love You' in 100 languages.",
+    n5:"Silver Winged Heart", d5:"Silver angel wings embracing a royal purple amethyst heart, finished with a dangling chain and a tiny silver heart — tender and graceful.",
+    n6:"Love Memories — Silver", d6:"A circle of tiny silver hearts around a secret black nano-projection stone — shine your phone light and reveal 'I Love You' in 100 languages.",
+    n7:"I Love You — Star", d7:"A gleaming vintage star embracing a magical projection stone — shine your phone flashlight and reveal 'I Love You' in 100 languages. Hypoallergenic silver shine that lasts.",
+    "cd-title":"The offer ends soon ⏳", "cd-sub":"33% off + free gift box — until midnight tonight", tH:"HRS", tM:"MIN", tS:"SEC",
+    "g-eyebrow":"A Gift That Speaks", "g-title":"Every piece arrives <em>gift-ready</em>",
+    "g-lead":"A luxurious velvet box, a hand-lettered gift card, and a chic pouch — all free with every order. Open the package and give it as is.",
+    g1:"Velvet box in collection colors", g2:"Gift card with your personal message", g3:"Anti-tarnish storage pouch", g4:"Quality guarantee certificate",
+    "g-cta":"Order your gift now",
+    "r-eyebrow":"4.9 out of 5 — 490+ reviews", "r-title":"What our clients say",
+    rv1:'"Even more stunning than the photos 💔 The black one looks so luxurious — I wore it to a friend\'s engagement and everyone asked about it. The packaging alone is a masterpiece!"', v1:"Verified Buyer — Cairo",
+    rv2:'"Ordered the white heart as a gift for my mom and it arrived in two days in a velvet box. The polished silver finish is gorgeous — no rust or tarnish after two months of daily wear."', v2:"Verified Buyer — Alexandria",
+    rv3:'"The crown heart is a steal at EGP 800 😍 It looks way more expensive, and gifting it to my cousin made her cry. Definitely coming back for the other colors."', v3:"Verified Buyer — Mansoura",
+    "f-title":"Frequently Asked Questions",
+    fq1:"Will it rust or tarnish?", fa1:"Not at all — every piece is high-quality stainless steel with a polished silver finish, resistant to rust and tarnish, with a guarantee certificate. Any issue: instant exchange or full refund.",
+    fq2:"When will my order arrive?", fa2:"2–4 business days to all governorates. Delivery is free with cash on delivery — you pay nothing until you receive and inspect it.",
+    fq3:"Can I exchange or return?", fa3:"You have 14 full days from delivery to exchange or return, no questions asked, as long as the piece is in its original condition and box.",
+    fq4:"Can I write a message on the gift card?", fa4:"Of course — write your message in the notes at checkout or send it to us on WhatsApp, and we'll hand-letter it on the gift card for free.",
+    "nl-title":"Early access to new drops", "nl-sub":"Leave your email — limited editions reach this list before anyone else, plus 10% off your first order.",
+    "nl-ph":"Enter your email…", "nl-btn":"Subscribe",
+    "ft-about":"Jewelry with a polished silver finish and signature heart designs. Solid quality, prices that give you a chance, and a gift that stays in memory.",
+    "ft-shop":"Shop", "ft-help":"Help", "ft-contact":"Contact", "ft-hours":"Daily 10AM — 11PM", "ft-rights":"All rights reserved", "ft-made":"Made with love in Egypt 🇪🇬",
+    "cart-title":"Your Cart", subtotal:"Subtotal", shipping:"Shipping", free:"Free", total:"Total", "ship-note":"Cash on delivery — arrives in 2-4 days", checkout:"Complete Order via WhatsApp",
+    cartEmpty:"Your cart is waiting for its first heart ♥",
+    added:"تمت الإضافة! ✓",
+    waMsg:"أهلاً LUMIÈRE 👋%0Aعايزة أتم طلب الأوردر ده:%0A",
+    waEnd:"%0A— الإجمالي: {total} ج.م (دفع عند الاستلام)",
+  },
+  ar: {
+    a1:"التوصيل مشمول في السعر", a2:"دفع عند الاستلام", a3:"خصم 33%", a4:"لفترة محدودة — 800 جنيه بدل 1,200",
+    brandSub:"مجوهرات فاخرة",
+    navShop:"المجموعة", navGift:"الهدية", navReviews:"آراء عميلاتنا", navFaq:"أسئلة شائعة", fq2s:"الشحن والتوصيل", fq3s:"الاستبدال والاسترجاع", fq4s:"كرت الإهداء",
+    "h-eyebrow":"مجموعة قلب ٢٠٢٦",
+    "h-title":'الفخامة اللي <em>تُلبس</em><br>على القلب',
+    "h-lead":"قلوب فولاذ مقاوم للصدأ بلمسة فضية مصقولة وأحجار زركونيا فاخرة — قطعة واحدة تحوّل أي إطلالة لذكريات. هدية تفضل في الذاكرة، وإطلالة تخطف الأنظار.",
+    "h-cta":"تسوّقي المجموعة", "h-cta2":"هدية جاهزة 🎁", "h-note":"التوصيل مشمول في السعر + دفع عند الاستلام لكل مصر", "h-chip":"يبدأ من",
+    t1:"التوصيل مشمول", t1s:"في السعر — بدون رسوم", t2:"فولاذ مقاوم للصدأ", t2s:"بلمسة فضية — ضد التأكسد", t3:"استبدال 14 يوم", t3s:"بدون أي أسئلة", t4:"علبة هدية فاخرة", t4s:"مع كل قطعة مجاناً",
+    "p-eyebrow":"الأكثر طلباً", "p-title":"مجموعة القلب", "p-sub":"سبع قطع أسطورية… تبدأ من 700 جنيه فقط. الكمية محدودة وبتخلص بسرعة.",
+    "gal-eyebrow":"لوميير في الحياة", "gal-title":"من إطلالات عميلاتنا الحقيقية",
+    "d-eyebrow":"كل التفاصيل", "d-title":"تفاصيل القلادة اللي هتعشقيها",
+    "d1t":"مادة عالية الجودة", "d1s":"صُنعت القلادة الرقيقة من فولاذ مقاوم للصدأ عالي الجودة، بلمسة نهائية فضية مصقولة وقلادة على شكل قلب من الزركونيا المكعبة المتلألئة.",
+    "d2t":"تصميم هالة القلب", "d2s":"الحجر العميق على شكل قلب محاط بهالة من الزركونيا المكعبة الشفافة — مظهر كلاسيكي أنيق يلتقط الضوء بشكل جميل.",
+    "d3t":"سلسلة رقيقة قابلة للتعديل", "d3s":"سلسلة رقيقة قابلة للتعديل تناسب الرقبة بشكل مريح، وتسمح لك بتحديد الطول المناسب لأشكال الرقبة المختلفة.",
+    "d4t":"أناقة يومية متعددة الاستخدامات", "d4s":"مثالية للارتداء اليومي أو المناسبات الخاصة — تتناغم بسهولة مع الفساتين وملابس العمل وإطلالات السهرة.",
+    "d5t":"هدية رومانسية لها", "d5s":"هدية مجوهرات مميزة لصديقة أو زوجة أو ابنة — في عيد الحب أو أعياد الميلاد أو ذكرى الزواج أو أي مناسبة تحتفلين فيها بالحب.",
+    b33:"خصم 33%", b29:"خصم 29%", best:"الأكثر مبيعاً 🔥", newB:"وصل حديثاً ✨",
+    stock:"متبقي", pieces:"قطع فقط", egp:"ج.م", add:"أضيفي للسلة", r1:"(4.9 · 212)", r2:"(5.0 · 186)", r3:"(4.8 · 94)", r4:"(4.9 · 58)", r5:"(5.0 · 41)", r6:"(4.9 · 36)", r7:"(4.9 · 63)",
+    n1:"قلب كريستال أبيض", d1:"حجر زركون أبيض قلّب مصقول بإطار من الألماس الصغير — النقاء في أبسط صوره.",
+    n2:"قلب منتصف الليل الأسود", d2:"حجر أسود غامق كالعين بحدّة كريستال من كل الجهات — جرأة تسكن القلب.",
+    n3:"قلب التياج الأميثيست", d3:"حجر أميثيست بنفسجي ملكي يتوّجه تاج بلمسة فضية بأحجار بيضاء — لكل إحساس ملكي.",
+    n4:"قلب الحب الدهبي", d4:"قلب دهبي أنيق يحتضن حجر إسقاط نانو سرّي — وَلّعي إضاءة الموبايل عليه واقري «بحبك» بـ100 لغة 💛",
+    n5:"قلب الجناح الفضي", d5:"جناحا ملاك من الفضة يحضنان قلب أميثيست بنفسجي، وسلسلة متدلية بتختمها بقلب صغير — حنونة ووقورة.",
+    n6:"قلب الذكريات الفضي", d6:"دائرة قلوب فضية صغيرة تحيط بحجر إسقاط أسود سرّي — وَلّعي إضاءة الموبايل واقري «بحبك» بـ100 لغة 💙",
+    n7:"قلادة أحبك النجمية", d7:"نجمة عتيقة لامعة تحيط بحجر إسقاط سحري — وَلّعي فلاش الموبايل واقري «بحبك» بـ100 لغة ✨ فضة مضادة للحساسية بلمعان يدوم.",
+    "cd-title":"العرض بينتهي قريباً ⏳", "cd-sub":"خصم 33% وعلبة الهدية المجانية — لحد منتصف الليل النهاردة", tH:"ساعة", tM:"دقيقة", tS:"ثانية",
+    "g-eyebrow":"هدية ما تتقالش", "g-title":'كل قطعة… <em>توصل هدية جاهزة</em>',
+    "g-lead":"علبة مخملية فاخرة، كرت إهداء بخط مخصوص، وكيس شيك — كل ده ببلاش مع كل أوردر. افتحي البكس وقدميها زي ما هي.",
+    g1:"علبة مخملية بلون المجموعة", g2:"كرت إهداء برسالة من اختيارك", g3:"كيس حفظ ضد الأكسدة", g4:"شهادة ضمان الجودة",
+    "g-cta":"اطلبي هديتك دلوقتي",
+    "r-eyebrow":"4.9 من 5 — أكثر من 490 تقييم", "r-title":"بتقولوا إيه عن لوميير؟",
+    rv1:'"جت أهدى من الصور بجد 💔 اللون الأسود شكله فخم جداً ولبسته في خطوبة صاحبتي وكلهم سألوني عليه. التغليف لوحده تحفة!"', v1:"عميلة موثقة — القاهرة",
+    rv2:'"طلبت القلب الأبيض هدية لأمي ووصل في يومين بعلبة مخمل. اللمسة الفضية فخمة فعلاً وما لونتش ولا صدها بعد شهرين من الاستخدام اليومي."', v2:"عميلة موثقة — الإسكندرية",
+    rv3:'"قلب التياج ده سرقة في 800 جنيه 😍 شكله أغلى بكتير، وهديته لبنت خالتي خلتها تبكي. أكيد هطلع باقي الألوان."', v3:"عميلة موثقة — المنصورة",
+    "f-title":"أسئلة بتتكرر كتير",
+    fq1:"القطعة بتصدّأ أو تتأكسد؟", fa1:"لأ خالص — كل قطعنا فولاذ مقاوم للصدأ عالي الجودة بلمسة فضية مصقولة، ضد التأكسد والصدأ، ومعاها شهادة ضمان. لو أي مشكلة — استبدال فوري أو استرجاع كامل.",
+    fq2:"إمتى يوصل الأوردر؟", fa2:"من 2 لـ 4 أيام عمل لكل المحافظات، والتوصيل مشمول في السعر والدفع كاش عند الاستلام — مش هتدفع حاجة قبل ما تستلمي وتعايني.",
+    fq3:"ممكن أستبدل أو أرجّع؟", fa3:"عندك 14 يوم كاملة من الاستلام للاستبدال أو الاسترجاع بدون أي أسئلة، بشرط إن القطعة بحالتها وبعلبتها.",
+    fq4:"أقدر أكتب رسالة على كرت الهدية؟", fa4:"طبعاً — اكتبي رسالتك في خانة الملاحظات وقت الأوردر أو ابعتيها لنا واتساب، وهنكتبها بخط مخصوص على كرت الإهداء ببلاش.",
+    "nl-title":"الوصول المبكر للإصدارات الجديدة", "nl-sub":"سيبي إيميلك — الإصدارات المحدودة بتوصل لميناء القائمة قبل أي حد، وخصم 10% على أول أوردر.",
+    "nl-ph":"اكتبي إيميلك هنا…", "nl-btn":"اشتركي",
+    "ft-about":"مجوهرات بلمسة فضية فاخرة وتصاميم قلب مميزة. جودة عالية متينة، أسعار تديك فرصة، وهدية تفضل في الذاكرة.",
+    "ft-shop":"المتجر", "ft-help":"مساعدة", "ft-contact":"تواصلي معنا", "ft-hours":"يومياً 10ص — 11م", "ft-rights":"جميع الحقوق محفوظة", "ft-made":"صُنع بحب في مصر 🇪🇬",
+    "cart-title":"سلة التسوق", subtotal:"المجموع الفرعي", shipping:"الشحن", free:"مجاني", total:"الإجمالي", "ship-note":"دفع عند الاستلام — التوصيل 2-4 أيام", checkout:"إتمام الأوردر واتساب",
+    cartEmpty:"سلتك مستنية أول قلب ♥",
+    added:"تمت الإضافة! ✓",
+    waMsg:"أهلاً LUMIÈRE 👋%0Aعايزة أتم طلب الأوردر ده:%0A",
+    waEnd:"%0A— الإجمالي: {total} ج.م (دفع عند الاستلام)",
+  }
+};
+
+const P_EN = { white:"White Crystal Heart", black:"Midnight Black Heart", amethyst:"Amethyst Crown Heart", gold:"Heart of Love — Gold", wing:"Silver Winged Heart", ring:"Love Memories — Silver", star:"I Love You — Star" };
+const P_AR = { white:"قلب كريستال أبيض", black:"قلب منتصف الليل الأسود", amethyst:"قلب التياج الأميثيست", gold:"قلب الحب الدهبي", wing:"قلب الجناح الفضي", ring:"قلب الذكريات الفضي", star:"قلادة أحبك النجمية" };
+const PRICES = { white:800, black:800, amethyst:800, gold:1000, wing:900, ring:700, star:1200 };
+
+let lang = "ar";
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+function applyLang(l){
+  lang = l;
+  const d = I18N[l];
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+  document.title = l === "ar" ? "لوميير | LUMIÈRE — مجوهرات فاخرة" : "LUMIÈRE — Fine Jewelry";
+  $$("[data-i]").forEach(el => { const k = el.dataset.i; if(d[k] !== undefined) el.textContent = d[k]; });
+  $$("[data-i-html]").forEach(el => { const k = el.dataset.iHtml; if(d[k] !== undefined) el.innerHTML = d[k]; });
+  $$("[data-i-ph]").forEach(el => { const k = el.dataset.iPh; if(d[k] !== undefined) el.placeholder = d[k]; });
+  $("#langBtn").firstChild.textContent = l === "ar" ? "EN " : "عربي ";
+  renderCart();
+}
+
+$("#langBtn").addEventListener("click", () => applyLang(lang === "ar" ? "en" : "ar"));
+
+/* theme toggle (dark / light) */
+if(localStorage.getItem("lumiere_theme") === "dark") document.documentElement.classList.add("dark");
+$("#themeBtn").addEventListener("click", () => {
+  const dark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem("lumiere_theme", dark ? "dark" : "light");
+});
+
+/* ============ Countdown ============ */
+function tick(){
+  const now = new Date();
+  const end = new Date(now); end.setHours(23,59,59,999);
+  let diff = Math.max(0, Math.floor((end - now)/1000));
+  const h = String(Math.floor(diff/3600)).padStart(2,"0");
+  const m = String(Math.floor(diff%3600/60)).padStart(2,"0");
+  const s = String(diff%60).padStart(2,"0");
+  tH.textContent = h; tM.textContent = m; tS.textContent = s;
+}
+setInterval(tick, 1000); tick();
+
+/* ============ Cart ============ */
+let cart = JSON.parse(localStorage.getItem("lumiere_cart") || "{}");
+
+function saveCart(){ localStorage.setItem("lumiere_cart", JSON.stringify(cart)); }
+function cartQty(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+
+function renderCart(){
+  const items = $("#cartItems");
+  const n = cartQty();
+  $("#cartCount").textContent = n;
+  $("#cartCount").classList.toggle("show", n > 0);
+  if(!n){
+    items.innerHTML = `<div class="cart-empty">
+      <svg viewBox="0 0 24 24" fill="currentColor"><use href="#heartIco"/></svg>
+      <p>${I18N[lang].cartEmpty}</p></div>`;
+    $("#subTotal").textContent = "0 " + I18N[lang].egp;
+    $("#grandTotal").textContent = "0 " + I18N[lang].egp;
+    return;
+  }
+  const names = lang === "ar" ? P_AR : P_EN;
+  let html = "", sub = 0;
+  for(const [id, q] of Object.entries(cart)){
+    sub += q * PRICES[id];
+    html += `<div class="c-item">
+      <div class="c-thumb">${pendantThumb(id)}</div>
+      <div class="info"><b>${names[id]}</b><div class="c-price">${q*PRICES[id]} ${I18N[lang].egp}</div>
+        <div class="qty"><button data-act="dec" data-id="${id}" aria-label="-">−</button><span>${q}</span><button data-act="inc" data-id="${id}" aria-label="+">+</button></div>
+      </div>
+      <button class="rm" data-act="rm" data-id="${id}" aria-label="remove"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#trashIco"/></svg></button>
+    </div>`;
+  }
+  items.innerHTML = html;
+  $("#subTotal").textContent = sub.toLocaleString() + " " + I18N[lang].egp;
+  $("#grandTotal").textContent = sub.toLocaleString() + " " + I18N[lang].egp;
+}
+
+function pendantThumb(id){
+  const m = { white:"white-main.jpg", black:"black-main.jpg", amethyst:"amethyst-main.jpg", gold:"gold-main.jpg", wing:"wing-main.jpg", ring:"ring-main.jpg", star:"star-main.jpg" };
+  return `<img src="images/${m[id]}" alt="">`;
+}
+
+function toast(msg){
+  $("#toastMsg").textContent = msg;
+  const t = $("#toast");
+  t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2200);
+}
+
+$$(".add").forEach(b => b.addEventListener("click", e => {
+  const id = e.currentTarget.closest(".card").dataset.id;
+  cart[id] = (cart[id] || 0) + 1;
+  saveCart(); renderCart(); toast(I18N[lang].added);
+}));
+
+$("#cartItems").addEventListener("click", e => {
+  const btn = e.target.closest("[data-act]"); if(!btn) return;
+  const {act, id} = btn.dataset;
+  if(act === "inc") cart[id]++;
+  if(act === "dec"){ cart[id]--; if(cart[id] <= 0) delete cart[id]; }
+  if(act === "rm") delete cart[id];
+  saveCart(); renderCart();
+});
+
+/* drawer */
+const openCart = () => { $("#drawer").classList.add("open"); $("#overlay").classList.add("show"); };
+const closeCart = () => { $("#drawer").classList.remove("open"); $("#overlay").classList.remove("show"); };
+$("#cartBtn").addEventListener("click", openCart);
+$("#closeCart").addEventListener("click", closeCart);
+$("#overlay").addEventListener("click", closeCart);
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeCart(); });
+
+/* checkout via WhatsApp */
+$("#checkoutBtn").addEventListener("click", () => {
+  const n = cartQty();
+  if(!n){ toast(I18N[lang].cartEmpty); return; }
+  const names = lang === "ar" ? P_AR : P_EN;
+  let msg = I18N[lang].waMsg, sub = 0;
+  for(const [id, q] of Object.entries(cart)){
+    sub += q * PRICES[id];
+    msg += `• ${names[id]} ×${q} = ${q*PRICES[id]} ج.م%0A`;
+  }
+  msg += I18N[lang].waEnd.replace("{total}", sub.toLocaleString());
+  window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
+});
+
+/* wishlist hearts */
+$$(".wish").forEach(b => b.addEventListener("click", () => {
+  b.classList.toggle("on");
+  toast(b.classList.contains("on") ? (lang==="ar" ? "اتضافت للمفضلة ♥" : "Added to wishlist ♥") : (lang==="ar" ? "اتشالت من المفضلة" : "Removed from wishlist"));
+}));
+
+/* FAQ */
+$$(".q button").forEach(b => b.addEventListener("click", () => {
+  const q = b.parentElement, a = q.querySelector(".a"), open = q.classList.contains("open");
+  $$(".q").forEach(x => { x.classList.remove("open"); x.querySelector(".a").style.maxHeight = null; });
+  if(!open){ q.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
+}));
+
+/* newsletter */
+$("#newsForm").addEventListener("submit", e => {
+  e.preventDefault();
+  toast(lang === "ar" ? "أهلًا بيكي في القائمة ✨ خصم 10% في الطريق" : "Welcome to the list ✨ 10% off is on its way");
+  e.target.reset();
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(x => { if(x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); } }), {threshold:.12});
+$$(".reveal").forEach(el => io.observe(el));
+
+/* init */
+applyLang("ar");
+renderCart();
+</script>
+</body>
+</html>
